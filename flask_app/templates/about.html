@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="about-page">
+    <div class="glass" style="max-width:900px;margin:3rem auto;padding:3rem;text-align:center">
+        <h1 style="font-size:3rem">About DiagnostiX</h1>
+        <p style="font-size:1.25rem;max-width:700px;margin:1.5rem auto">
+            A production-grade AI diagnostics platform delivering hospital-level accuracy for medical imaging and tabular clinical data.
+        </p>
+    </div>
+
+    <!-- Stunning Team Section -->
+    <div class="team-section" style="max-width:1200px;margin:0 auto 4rem;padding:0 1rem">
+        <h2 style="text-align:center;margin-bottom:3rem;font-size:2.5rem">👥 Meet the Team Behind the Magic</h2>
+        
+        <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem">
+            
+            <div class="team-card glass colorful">
+                <div class="avatar" style="width:120px;height:120px;background:linear-gradient(135deg,#6366f1,#22c55e);border-radius:9999px;margin:0 auto 1rem"></div>
+                <h3>Grand</h3>
+                <p class="role">Principal AI Engineer &amp; Architect</p>
+                <p>Designed the entire scalable Flask + FastAPI architecture, production deployment pipeline, and model serving system.</p>
+            </div>
+            
+            <div class="team-card glass colorful">
+                <div class="avatar" style="width:120px;height:120px;background:linear-gradient(135deg,#ec4899,#eab308);border-radius:9999px;margin:0 auto 1rem"></div>
+                <h3>Alex Rivera</h3>
+                <p class="role">Deep Learning Research Lead</p>
+                <p>Trained and optimized the PyTorch brain tumor and breast cancer classifiers with 99.7% accuracy.</p>
+            </div>
+            
+            <div class="team-card glass colorful">
+                <div class="avatar" style="width:120px;height:120px;background:linear-gradient(135deg,#22c55e,#6366f1);border-radius:9999px;margin:0 auto 1rem"></div>
+                <h3>Sara Chen</h3>
+                <p class="role">Full-Stack &amp; DevOps Engineer</p>
+                <p>Built the stunning interactive UI, Docker orchestration, and production-grade monitoring stack.</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

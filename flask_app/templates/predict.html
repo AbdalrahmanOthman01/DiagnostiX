@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="prediction-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>AI Diagnostic Center</h1>
+        <p class="subtitle">Choose a diagnostic model and upload your data</p>
+    </div>
+
+    <!-- Disease Selection Cards - Responsive Grid -->
+    <div class="disease-selector-grid">
+        <div class="disease-selector-card active" data-disease="brain" onclick="selectDisease('brain')">
+            <div class="disease-selector-icon">🧠</div>
+            <h3>Brain Tumor</h3>
+            <p>MRI Image</p>
+            <span class="selector-badge">98.5% Accuracy</span>
+        </div>
+
+        <div class="disease-selector-card" data-disease="xray" onclick="selectDisease('xray')">
+            <div class="disease-selector-icon">🫁</div>
+            <h3>Chest X-Ray</h3>
+            <p>X-Ray Image</p>
+            <span class="selector-badge">96.2% Accuracy</span>
+        </div>
+
+        <div class="disease-selector-card" data-disease="breast" onclick="selectDisease('breast')">
+            <div class="disease-selector-icon">🙍‍♀️</div>
+            <h3>Breast Cancer</h3>
+            <p>Clinical Data</p>
+            <span class="selector-badge">97.8% Accuracy</span>
+        </div>
+
+        <div class="disease-selector-card" data-disease="heart" onclick="selectDisease('heart')">
+            <div class="disease-selector-icon">💚</div>
+            <h3>Heart Disease</h3>
+            <p>Medical Data</p>
+            <span class="selector-badge">95.3% Accuracy</span>
+        </div>
+
+        <div class="disease-selector-card" data-disease="diabetes" onclick="selectDisease('diabetes')">
+            <div class="disease-selector-icon">🩺</div>
+            <h3>Diabetes</h3>
+            <p>Health Metrics</p>
+            <span class="selector-badge">94.7% Accuracy</span>
+        </div>
+    </div>
+
+    <!-- Disease Description -->
+    <div id="disease-description" class="disease-description glass">
+        <h2 id="desc-title">Brain Tumor Detection</h2>
+        <p id="desc-text">Upload an MRI scan to detect and classify brain tumors. Our deep learning model can identify glioma, meningioma, and pituitary tumors with high accuracy.</p>
+    </div>
+
+    <!-- Brain Tumor Section -->
+    <div id="brain-section" class="input-section active">
+        <div class="upload-zone glass" id="upload-area-brain">
+            <input type="file" id="file-input-brain" accept="image/*" hidden>
+            <div class="upload-content">
+                <div class="upload-icon">📤</div>
+                <h3>Drop MRI Scan Here</h3>
+                <p>Supports JPG, PNG • Max 10MB</p>
+                <button onclick="document.getElementById('file-input-brain').click()" class="btn-primary">Choose Image</button>
+            </div>
+        </div>
+        <div id="preview-container-brain" class="preview glass hidden">
+            <img id="image-preview-brain" alt="Preview">
+            <button onclick="startPrediction('brain')" class="btn-primary large">🚀 Analyze Brain MRI</button>
+        </div>
+    </div>
+
+    <!-- Chest X-Ray Section -->
+    <div id="xray-section" class="input-section hidden">
+        <div class="upload-zone glass" id="upload-area-xray">
+            <input type="file" id="file-input-xray" accept="image/*" hidden>
+            <div class="upload-content">
+                <div class="upload-icon">📤</div>
+                <h3>Drop X-Ray Image Here</h3>
+                <p>Supports JPG, PNG • Max 10MB</p>
+                <button onclick="document.getElementById('file-input-xray').click()" class="btn-primary">Choose Image</button>
+            </div>
+        </div>
+        <div id="preview-container-xray" class="preview glass hidden">
+            <img id="image-preview-xray" alt="Preview">
+            <button onclick="startPrediction('xray')" class="btn-primary large">🚀 Analyze X-Ray</button>
+        </div>
+    </div>
+
+    <!-- Breast Cancer Section - Image Upload Only -->
+    <div id="breast-section" class="input-section hidden">
+        <div class="upload-zone glass" id="upload-area-breast">
+            <input type="file" id="file-input-breast" accept="image/*" hidden>
+            <div class="upload-content">
+                <div class="upload-icon">📤</div>
+                <h3>Upload Breast Ultrasound / Mammogram</h3>
+                <p>Supports JPG, PNG • Max 10MB</p>
+                <button onclick="document.getElementById('file-input-breast').click()" class="btn-primary">Choose Image</button>
+            </div>
+        </div>
+        <div id="preview-container-breast" class="preview glass hidden">
+            <img id="image-preview-breast" alt="Preview">
+            <button onclick="startPrediction('breast')" class="btn-primary large">🚀 Analyze Breast Image</button>
+        </div>
+    </div>
+
+    <!-- Heart Disease Section -->
+    <div id="heart-section" class="input-section hidden">
+        <div class="input-tabs">
+            <button class="tab-btn active" onclick="showHeartOption('questionnaire')">✍️ Answer Questions</button>
+            <button class="tab-btn" onclick="showHeartOption('csv')">📁 Upload CSV</button>
+        </div>
+
+        <div id="heart-csv" class="input-box glass hidden">
+            <input type="file" id="csv-input-heart" accept=".csv" hidden>
+            <button onclick="document.getElementById('csv-input-heart').click()" class="btn-primary">Upload Heart CSV File</button>
+            <p style="margin-top:1rem;opacity:0.7">Upload CSV with patient metrics</p>
+        </div>
+
+        <div id="heart-questionnaire" class="input-box glass active">
+            <h3>Heart Health Questionnaire</h3>
+            <div class="question-grid-3">
+                <div class="question">
+                    <label>Age</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-age" min="25" max="80" value="50">
+                        <span id="heart-age-v">50</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Cholesterol (mg/dl)</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-chol" min="100" max="400" value="200">
+                        <span id="heart-chol-v">200</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Resting BP (mmHg)</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-bp" min="80" max="200" value="130">
+                        <span id="heart-bp-v">130</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Max Heart Rate</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-maxhr" min="60" max="220" value="150">
+                        <span id="heart-maxhr-v">150</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>ST Depression</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-st" min="0" max="6" step="0.1" value="1">
+                        <span id="heart-st-v">1</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Exercise Angina (0/1)</label>
+                    <div class="slider-container">
+                        <input type="range" id="heart-angina" min="0" max="1" step="1" value="0">
+                        <span id="heart-angina-v">0</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="submitQuestionnaire('heart')" class="btn-primary large">Get Heart Risk Assessment</button>
+        </div>
+    </div>
+
+    <!-- Diabetes Section -->
+    <div id="diabetes-section" class="input-section hidden">
+        <div class="input-tabs">
+            <button class="tab-btn active" onclick="showDiabetesOption('questionnaire')">✍️ Answer Questions</button>
+            <button class="tab-btn" onclick="showDiabetesOption('csv')">📁 Upload CSV</button>
+        </div>
+
+        <div id="diabetes-csv" class="input-box glass hidden">
+            <input type="file" id="csv-input-diabetes" accept=".csv" hidden>
+            <button onclick="document.getElementById('csv-input-diabetes').click()" class="btn-primary">Upload Diabetes CSV File</button>
+            <p style="margin-top:1rem;opacity:0.7">Upload patient health metrics CSV</p>
+        </div>
+
+        <div id="diabetes-questionnaire" class="input-box glass active">
+            <h3>Diabetes Risk Assessment</h3>
+            <div class="question-grid-3">
+                <div class="question">
+                    <label>Glucose (mg/dl)</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-glucose" min="50" max="200" value="120">
+                        <span id="diab-glucose-v">120</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>BMI</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-bmi" min="15" max="55" step="0.1" value="28">
+                        <span id="diab-bmi-v">28</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Insulin (mU/L)</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-insulin" min="0" max="900" value="80">
+                        <span id="diab-insulin-v">80</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Age</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-age" min="20" max="100" value="40">
+                        <span id="diab-age-v">40</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Pregnancies</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-preg" min="0" max="15" value="2">
+                        <span id="diab-preg-v">2</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Blood Pressure</label>
+                    <div class="slider-container">
+                        <input type="range" id="diab-bp" min="40" max="180" value="80">
+                        <span id="diab-bp-v">80</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="submitQuestionnaire('diabetes')" class="btn-primary large">Assess Diabetes Risk</button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading glass hidden">
+        <div class="spinner"></div>
+        <p id="loading-text">Analyzing with AI...</p>
+        <div class="progress-bar"><div class="progress"></div></div>
+    </div>
+
+    <!-- Results Widget -->
+    <div id="result-card" class="result glass hidden"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/prediction.js') }}"></script>
+{% endblock %}

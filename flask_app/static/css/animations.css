@@ -1,0 +1,47 @@
+/* Smooth Animations & Effects */
+.ai-orb {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle at 40% 40%, #6366f1, transparent 70%);
+    border-radius: 50%;
+    animation: orb-float 4s ease-in-out infinite;
+    box-shadow: 0 0 80px #6366f1;
+}
+
+@keyframes orb-float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+.feature-card {
+    padding: 2rem;
+    transition: transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 999px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #6366f1, #22c55e);
+    animation: progress-load 2.5s ease forwards;
+}
+
+@keyframes progress-load {
+    to { width: 100%; }
+}

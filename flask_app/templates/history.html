@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="glass" style="max-width:900px;margin:3rem auto;padding:2rem">
+    <h1>Prediction History</h1>
+    <p>History is stored in database. Connect PostgreSQL in production.</p>
+    <table style="width:100%;margin-top:2rem">
+        <tr><th>Date</th><th>Prediction</th><th>Confidence</th></tr>
+    </table>
+</div>
+{% endblock %}

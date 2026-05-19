@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiagnostiX - AI Medical Diagnostics Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <script>
+        // Prevent flash of wrong theme
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        if (savedTheme === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+            document.documentElement.style.colorScheme = "light";
+            if (document.body) document.body.classList.add("light-mode");
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.style.colorScheme = "dark";
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">DiagnostiX</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/predict">Diagnostics</a>
+                <a href="/history">History</a>
+                <a href="/about">About</a>
+            </div>
+            <button id="theme-toggle" class="theme-btn" title="Toggle theme">🌞</button>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <footer class="glass-footer">
+        <p>&copy; 2026 DiagnostiX. Enterprise-grade AI Diagnostics Platform. | Secure • Fast • Accurate</p>
+    </footer>
+</body>
+</html>

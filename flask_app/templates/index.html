@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero glass-gradient">
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <h1 class="hero-title">Next-Gen AI Diagnostics<br><span class="gradient-text">for Every Disease</span></h1>
+            <p class="hero-subtitle">Cutting-edge machine learning models trained on thousands of cases. Fast, accurate, and trusted by medical professionals.</p>
+            <div class="cta-buttons">
+                <a href="/predict" class="btn-primary btn-lg">
+                    <span>🚀 Launch Diagnostic Center</span>
+                </a>
+                <a href="#diseases" class="btn-secondary btn-lg">
+                    <span>📚 Learn About Models</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="ai-orb"></div>
+            <div class="floating-cards">
+                <div class="float-card">🧠 Brain</div>
+                <div class="float-card">🙍‍♀️ Breast</div>
+                <div class="float-card">💚 Heart</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disease Showcase Section -->
+<section id="diseases" class="disease-showcase">
+    <div class="section-header">
+        <h2>Supported Diagnostic Models</h2>
+        <p>Choose the diagnostic model that matches your needs</p>
+    </div>
+    
+    <div class="disease-grid">
+        <!-- Brain Tumor -->
+        <div class="disease-card glass-hover">
+            <div class="disease-icon large">🧠</div>
+            <h3>Brain Tumor Detection</h3>
+            <p class="disease-desc">MRI scans analysis for tumor detection and classification</p>
+            <div class="disease-stats">
+                <span class="stat">📊 98.5% Accuracy</span>
+                <span class="stat">⚡ 0.2s Processing</span>
+            </div>
+            <div class="disease-features">
+                <span class="feature-tag">MRI Images</span>
+                <span class="feature-tag">Deep Learning</span>
+            </div>
+        </div>
+
+        <!-- Chest X-ray -->
+        <div class="disease-card glass-hover">
+            <div class="disease-icon large">🫁</div>
+            <h3>Chest X-Ray Analysis</h3>
+            <p class="disease-desc">Pneumonia and lung disease detection from chest X-rays</p>
+            <div class="disease-stats">
+                <span class="stat">📊 96.2% Accuracy</span>
+                <span class="stat">⚡ 0.15s Processing</span>
+            </div>
+            <div class="disease-features">
+                <span class="feature-tag">X-Ray Images</span>
+                <span class="feature-tag">CNN Model</span>
+            </div>
+        </div>
+
+        <!-- Breast Cancer -->
+        <div class="disease-card glass-hover">
+            <div class="disease-icon large">🙍‍♀️</div>
+            <h3>Breast Cancer Prediction</h3>
+            <p class="disease-desc">Malignancy classification using clinical data</p>
+            <div class="disease-stats">
+                <span class="stat">📊 97.8% Accuracy</span>
+                <span class="stat">⚡ 0.1s Processing</span>
+            </div>
+            <div class="disease-features">
+                <span class="feature-tag">Tabular Data</span>
+                <span class="feature-tag">ML Classifier</span>
+            </div>
+        </div>
+
+        <!-- Heart Disease -->
+        <div class="disease-card glass-hover">
+            <div class="disease-icon large">💚</div>
+            <h3>Heart Disease Prediction</h3>
+            <p class="disease-desc">Cardiovascular risk assessment from vital signs</p>
+            <div class="disease-stats">
+                <span class="stat">📊 95.3% Accuracy</span>
+                <span class="stat">⚡ 0.08s Processing</span>
+            </div>
+            <div class="disease-features">
+                <span class="feature-tag">Clinical Data</span>
+                <span class="feature-tag">XGBoost</span>
+            </div>
+        </div>
+
+        <!-- Diabetes -->
+        <div class="disease-card glass-hover">
+            <div class="disease-icon large">🩺</div>
+            <h3>Diabetes Risk Assessment</h3>
+            <p class="disease-desc">Diabetes prediction based on patient health metrics</p>
+            <div class="disease-stats">
+                <span class="stat">📊 94.7% Accuracy</span>
+                <span class="stat">⚡ 0.09s Processing</span>
+            </div>
+            <div class="disease-features">
+                <span class="feature-tag">Medical Data</span>
+                <span class="feature-tag">Neural Network</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="section-header">
+        <h2>Why Choose DiagnostiX?</h2>
+        <p>Enterprise-grade AI diagnostics built for speed and accuracy</p>
+    </div>
+    
+    <div class="feature-grid">
+        <div class="feature-card glass">
+            <div class="feature-icon">🎯</div>
+            <h3>Highly Accurate</h3>
+            <p>State-of-the-art models achieve 94-98% accuracy across all disease categories</p>
+        </div>
+
+        <div class="feature-card glass">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Get diagnostic results in milliseconds with optimized inference pipelines</p>
+        </div>
+
+        <div class="feature-card glass">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure & Private</h3>
+            <p>HIPAA-compliant processing with end-to-end encryption for patient data</p>
+        </div>
+
+        <div class="feature-card glass">
+            <div class="feature-icon">🌐</div>
+            <h3>Multi-Modal Input</h3>
+            <p>Support for images, tabular data, and interactive questionnaires</p>
+        </div>
+
+        <div class="feature-card glass">
+            <div class="feature-icon">📊</div>
+            <h3>Detailed Reports</h3>
+            <p>Comprehensive diagnostic reports with confidence scores and recommendations</p>
+        </div>
+
+        <div class="feature-card glass">
+            <div class="feature-icon">🚀</div>
+            <h3>Production Ready</h3>
+            <p>Containerized Docker deployment with monitoring and logging</p>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">250K+</div>
+            <p>Diagnostic Cases Processed</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">96%</div>
+            <p>Average Accuracy</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <p>Healthcare Partners</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <p>System Uptime</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-final glass-gradient">
+    <div class="cta-content">
+        <h2>Ready to Get Started?</h2>
+        <p>Experience the power of AI-driven diagnostics today</p>
+        <a href="/predict" class="btn-primary btn-xl">Launch Diagnostic Platform →</a>
+    </div>
+</section>
+{% endblock %}

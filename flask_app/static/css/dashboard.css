@@ -1,0 +1,83 @@
+/* Enhanced Colorful Dashboard Widgets */
+.prediction-page, .results-dashboard {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.team-card {
+    padding: 2.5rem;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.team-card:hover {
+    transform: translateY(-12px) scale(1.03);
+}
+
+.team-card .role {
+    color: #22c55e;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.colorful {
+    background: linear-gradient(145deg, rgba(99,102,241,0.12), rgba(34,197,94,0.08));
+    border: 1px solid rgba(99,102,241,0.3);
+}
+
+.big-prediction {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #22c55e, #eab308, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.disease-badge {
+    background: #22c55e;
+    color: #0f172a;
+    padding: 4px 16px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.confidence-widget {
+    margin: 2rem 0;
+}
+
+.conf-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #22c55e;
+}
+
+.prob-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.prob-bar {
+    flex: 1;
+    height: 10px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.prob-fill {
+    height: 100%;
+    background: linear-gradient(to right, #6366f1, #22c55e);
+    border-radius: 9999px;
+    transition: width 1s cubic-bezier(0.23,1,0.32,1);
+}

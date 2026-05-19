@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="results-dashboard">
+    <h1>Diagnosis Results</h1>
+    <div class="result-grid">
+        <div class="prediction-result glass">
+            <h2>Prediction</h2>
+            <div id="pred-label" class="big-prediction"></div>
+            <div class="confidence-bar"><div id="conf-fill"></div></div>
+            <p id="confidence-text"></p>
+        </div>
+        <div class="probabilities glass">
+            <h3>Class Probabilities</h3>
+            <div id="prob-bars"></div>
+        </div>
+    </div>
+    <div class="insights glass">
+        <h3>Clinical Insights</h3>
+        <p id="insights-text"></p>
+    </div>
+    <button onclick="window.location.href='/predict'" class="btn-primary">New Analysis</button>
+</div>
+{% endblock %}

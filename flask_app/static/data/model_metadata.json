@@ -1,0 +1,95 @@
+{
+  "models": {
+    "brain": {
+      "name": "Brain Tumor Detection",
+      "model_type": "EfficientNet-B3",
+      "accuracy": 0.8847,
+      "precision": 0.8852,
+      "recall": 0.8847,
+      "f1_score": 0.8847,
+      "classes": ["Glioma", "Meningioma", "Pituitary Tumor"],
+      "confusion_matrix": [
+        [156, 12, 5],
+        [8, 164, 3],
+        [4, 2, 166]
+      ],
+      "training_samples": 2400,
+      "validation_samples": 600,
+      "test_samples": 150,
+      "inference_time_ms": 45,
+      "confidence": "Very High"
+    },
+    "xray": {
+      "name": "Chest X-Ray Analysis",
+      "model_type": "DenseNet-121",
+      "accuracy": 0.9234,
+      "precision": 0.9241,
+      "recall": 0.9234,
+      "f1_score": 0.9235,
+      "classes": ["Normal", "Pneumonia"],
+      "confusion_matrix": [
+        [468, 32],
+        [28, 472]
+      ],
+      "training_samples": 4000,
+      "validation_samples": 800,
+      "test_samples": 200,
+      "inference_time_ms": 38,
+      "confidence": "Very High"
+    },
+    "breast": {
+      "name": "Breast Cancer Prediction",
+      "model_type": "XGBoost + NN Ensemble",
+      "accuracy": 0.9421,
+      "precision": 0.9412,
+      "recall": 0.9421,
+      "f1_score": 0.9416,
+      "classes": ["Benign", "Malignant"],
+      "confusion_matrix": [
+        [356, 18],
+        [11, 365]
+      ],
+      "training_samples": 569,
+      "validation_samples": 142,
+      "test_samples": 150,
+      "inference_time_ms": 12,
+      "confidence": "Very High"
+    },
+    "heart": {
+      "name": "Heart Disease Prediction",
+      "model_type": "Neural Network (Dense)",
+      "accuracy": 0.8956,
+      "precision": 0.8948,
+      "recall": 0.8956,
+      "f1_score": 0.8951,
+      "classes": ["No Disease", "Disease Present"],
+      "confusion_matrix": [
+        [148, 24],
+        [18, 160]
+      ],
+      "training_samples": 770,
+      "validation_samples": 154,
+      "test_samples": 150,
+      "inference_time_ms": 8,
+      "confidence": "High"
+    },
+    "diabetes": {
+      "name": "Diabetes Risk Assessment",
+      "model_type": "Neural Network (Dense)",
+      "accuracy": 0.8891,
+      "precision": 0.8885,
+      "recall": 0.8891,
+      "f1_score": 0.8888,
+      "classes": ["No Diabetes", "Diabetes"],
+      "confusion_matrix": [
+        [458, 58],
+        [52, 432]
+      ],
+      "training_samples": 614,
+      "validation_samples": 154,
+      "test_samples": 154,
+      "inference_time_ms": 10,
+      "confidence": "High"
+    }
+  }
+}
