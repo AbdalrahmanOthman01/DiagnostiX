@@ -165,11 +165,16 @@ Includes tests for:
 <table>
 <tr>
   <td align="center">
-    <img src="https://avatars.githubusercontent.com/u/000?v=4" width="70"><br>
+    <img src="https://drive.google.com/file/d/14xl740dMuF29jbo2z63pb7BEAT8Xq9sT/view?usp=sharing" width="70"><br>
     <b>Abdalrahman Hossam Othman</b><br>
-    <sub>Principal AI Engineer & System Architect</sub>
+    <sub>Deployment</sub>
   </td>
-
+  <td align="center">
+    <img src="https://drive.google.com/file/d/17CgmPY3z2hTtCxXsj-0yD6mV5YXwDPSl/view?usp=sharing" width="70"><br>
+    <b>Ahmed Mahmoud Abdelmoktader Mahmoud</b><br>
+    <sub>Chest X-ray</sub>
+  </td>
+  
 </table>
 
 ---
