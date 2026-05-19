@@ -166,20 +166,10 @@ Includes tests for:
 <tr>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/000?v=4" width="70"><br>
-    <b>Grand</b><br>
+    <b>Abdalrahman Hossam Othman</b><br>
     <sub>Principal AI Engineer & System Architect</sub>
   </td>
-  <td align="center">
-    <img src="https://avatars.githubusercontent.com/u/111?v=4" width="70"><br>
-    <b>Alex Rivera</b><br>
-    <sub>Deep Learning Research Lead</sub>
-  </td>
-  <td align="center">
-    <img src="https://avatars.githubusercontent.com/u/222?v=4" width="70"><br>
-    <b>Sara Chen</b><br>
-    <sub>Full-Stack & DevOps Engineer</sub>
-  </td>
-</tr>
+
 </table>
 
 ---
